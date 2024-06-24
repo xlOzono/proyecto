@@ -13,12 +13,12 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btDomestico" layoutX="252.0" layoutY="127.0" mnemonicParsing="false" onAction="#btDomestico" text="Domestico">
+      <Button fx:id="btDomestico" layoutX="252.0" layoutY="127.0" mnemonicParsing="false" onAction="#domesticoPressed" text="Domestico">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btGranja" layoutX="254.0" layoutY="197.0" mnemonicParsing="false" onAction="#btGranja" text="De Granja">
+      <Button fx:id="btGranja" layoutX="254.0" layoutY="197.0" mnemonicParsing="false" onAction="#granjaPressed" text="De Granja">
          <font>
             <Font size="16.0" />
          </font>

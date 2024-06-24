@@ -18,11 +18,34 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </Label>
-            <Button fx:id="brRecibirMascota" mnemonicParsing="false" onAction="#recibirMascota" text="Recibir Mascota">
+            <Button fx:id="btRecibirMascota" mnemonicParsing="false" onAction="#recibirMascotaPressed" text="Recibir Mascota">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin></Button>
+            <Button fx:id="btAtender" mnemonicParsing="false" onAction="#atenderMascotaPressed" text="Atender Mascota">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btCobrar" mnemonicParsing="false" onAction="#cobrarPressed" text="Cobrar Atencion">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btGestionar" mnemonicParsing="false" onAction="#gestionarPressed" text="Gestionar Personal">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btEliminar" mnemonicParsing="false" onAction="#eliminarPressed" text="Eliminar Mascota">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
          </children>
       </VBox>
    </children>

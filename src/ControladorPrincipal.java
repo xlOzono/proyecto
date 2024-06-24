@@ -12,11 +12,23 @@ import javafx.scene.Node;;
 public class ControladorPrincipal {
 
     @FXML
-    private Button brRecibirMascota;
+    private Button btAtender;
+
+    @FXML
+    private Button btCobrar;
+
+    @FXML
+    private Button btEliminar;
+
+    @FXML
+    private Button btGestionar;
+
+    @FXML
+    private Button btRecibirMascota;
 
 
     @FXML
-    void recibirMascota(ActionEvent event) {
+    void recibirMascotaPressed(ActionEvent event) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas\\IngresarMascota.fxml"));
@@ -31,5 +43,25 @@ public class ControladorPrincipal {
             System.out.println(e);
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void atenderMascotaPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cobrarPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void eliminarPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gestionarPressed(ActionEvent event) {
+
     }
 }
