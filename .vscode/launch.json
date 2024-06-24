@@ -4,6 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "GitTrabajo_a14e2a9b",
+            "vmArgs": "--module-path \"C:/Users/fabia/Desktop/JavaFX/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
         {
             "type": "java",
             "name": "Current File",
@@ -12,11 +21,11 @@
         },
         {
             "type": "java",
-            "name": "App",
+            "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "ProyectoVeterinaria_a86b628a",
-            "vmArgs": "--module-path \"C:/Java/javafx-sdk-21.0.3/lib\" --add-modules javafx.controls,javafx.fxml"
+            "projectName": "ProyectoPooOsvaldo_26e0153f",
+            "vmArgs": "--module-path \"C:/Users/fabia/Desktop/JavaFX/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
