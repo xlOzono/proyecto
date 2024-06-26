@@ -1,4 +1,4 @@
-package ControladoresVentanas;
+
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,9 +24,9 @@ public class CtrlIngresarMascota {
     void domesticoPressed(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarNombre.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Ingresar Domestico");
+            stage.setTitle("Ingresar Nombre");
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
             // Hide this current window (if this is what you want)
@@ -41,12 +41,11 @@ public class CtrlIngresarMascota {
     void granjaPressed(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarGranja.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarCodigo.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Ingresar Granja");
+            stage.setTitle("Ingresar Codigo");
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
-            // Hide this current window (if this is what you want)
             ((Node)(event.getSource())).getScene().getWindow().hide();
         }
         catch (IOException e) {

@@ -3,7 +3,7 @@ package Clases.Animales;
 import java.util.ArrayList;
 
 public class Animal {
-    public ArrayList<Animal> animales;
+    public static ArrayList<Animal> animales = new ArrayList<>();
     private TipoAnimal tipo;
     private int edad;
     
@@ -11,6 +11,7 @@ public class Animal {
         this.tipo = tipo;
         this.edad = edad;
         animales.add(this);
+        System.out.println(animales);
     }
 
     public TipoAnimal getTipo() {

@@ -1,4 +1,4 @@
-package ControladoresVentanas;
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
