@@ -13,6 +13,11 @@ public class ElementoFicha {
         this.tratamiento = tratamiento;
     }
 
+    public String toString() {
+        String linea = String.format("Fecha: %s\n Diagnostico:%s\nTratamiento: %s",fecha,diagnostico.getDescripcion(),tratamiento);
+        return linea;
+    }
+    
     public String getFecha() {
         return fecha;
     }

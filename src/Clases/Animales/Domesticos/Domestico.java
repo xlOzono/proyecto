@@ -11,6 +11,23 @@ public class Domestico extends Animal{
         this.nombre = nombre;
     }
 
+    public static boolean containsName(String nombre) {
+        for(Animal animal: Animal.animales){
+            if(animal instanceof Domestico && ((Domestico)animal).getNombre().equals(nombre)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static Domestico getDomestico(String nombre) {
+        for(Animal animal: Animal.animales){
+            if(animal instanceof Domestico && ((Domestico)animal).getNombre().equals(nombre)){
+                return (Domestico) animal;
+            }
+        }
+        return null;
+    }
+
     public String getNombre() {
         return nombre;
     }

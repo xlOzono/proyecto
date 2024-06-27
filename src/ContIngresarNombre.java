@@ -3,6 +3,7 @@ import java.io.IOException;
 
 import Clases.Animales.Animal;
 import Clases.Animales.Domesticos.Domestico;
+import Clases.Ficha.Ficha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,9 @@ public class ContIngresarNombre {
 
     @FXML
     private Button btAceptarNombre;
+    
+    @FXML
+    private Button btVolver;
 
     @FXML
     private TextField entryNombre;
@@ -35,7 +39,7 @@ public class ContIngresarNombre {
                 root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
                 Stage stage = new Stage();
                 stage.setTitle("Ingresar Domestico");
-                stage.setScene(new Scene(root, 600, 400));
+                stage.setScene(new Scene(root, 800, 400));
                 stage.show();
                 ((Node)(event.getSource())).getScene().getWindow().hide();
             }
@@ -44,25 +48,44 @@ public class ContIngresarNombre {
             }
         }
         //Si no está vacía, busca en el arreglo el nombre del animal para rellenar la ficha
-        for(Animal animal: Animal.animales){
-            //Si se encuentra al animal en la lista, rellena la ficha
-            if (animal instanceof Domestico && ((Domestico)animal).getNombre().equals(entryNombre.getText())){
-                lbFicha.setText("ValoresFicha");
+
+        //Si se encuentra al animal en la lista, rellena la ficha
+        if (Domestico.containsName(entryNombre.getText())){
+            Domestico mascota = Domestico.getDomestico(entryNombre.getText());
+            Ficha ficha = Ficha.getFicha(mascota);
+            
+            lbFicha.setText("ValoresFicha");
+        }
+        else{
+            Parent root;
+            try {
+                root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
+                Stage stage = new Stage();
+                stage.setTitle("Ingresar Domestico");
+                stage.setScene(new Scene(root, 800, 400));
+                stage.show();
+                ((Node)(event.getSource())).getScene().getWindow().hide();
             }
-            else{
-                Parent root;
-                try {
-                    root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
-                    Stage stage = new Stage();
-                    stage.setTitle("Ingresar Domestico");
-                    stage.setScene(new Scene(root, 600, 400));
-                    stage.show();
-                    ((Node)(event.getSource())).getScene().getWindow().hide();
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
+            catch (IOException e) {
+                e.printStackTrace();
             }
+            }
+    }
+
+    @FXML
+    void volverPressed(ActionEvent event) {
+        Parent root;       
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarMascota.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Ingresar Domestico");
+            stage.setScene(new Scene(root, 600, 400));
+            stage.show();
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 
