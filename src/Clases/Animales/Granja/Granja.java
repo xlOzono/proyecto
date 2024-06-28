@@ -50,11 +50,5 @@ public class Granja extends Animal{
     public String getRaza() {
         return null;
     }
-
-    public static boolean y(int int1) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'y'");
-    }
-
     
 }

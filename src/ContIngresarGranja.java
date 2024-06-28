@@ -105,7 +105,7 @@ public class ContIngresarGranja {
     void aceptarMascotaPressed(ActionEvent event) {
         Alert a = new Alert(AlertType.NONE);
         try {
-            if (Granja.y(Integer.parseInt(entryCodigoAnimal.getText()))) {
+            if (Granja.containsCodigo(Integer.parseInt(entryCodigoAnimal.getText()))) {
                 a.setAlertType(AlertType.ERROR);
                 a.setContentText("La mascota ya existe");
                 a.show();

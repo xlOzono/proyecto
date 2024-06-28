@@ -22,9 +22,9 @@ public class App extends Application {
         primaryStage.show();
         
 
-        new Perro(TipoAnimal.DOMESTICO,123,"","pitbul");
-        new Gato(TipoAnimal.DOMESTICO,123,"","epico");
-        new Ave(TipoAnimal.DOMESTICO,123,"etc");
+        new Perro(TipoAnimal.DOMESTICO,123,"Chocolate","pitbull");
+        new Gato(TipoAnimal.DOMESTICO,123,"Bruno","naranja");
+        new Ave(TipoAnimal.DOMESTICO,123,"Apolo");
         new Ficha();
         new Veterinaria(1, "Juan", "Perez", "Medico Veterinario", "Animales exoticos");
         new Auxiliar(2, "Diego", "Martinez", "Esterilización");

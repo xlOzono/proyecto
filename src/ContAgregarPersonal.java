@@ -71,12 +71,12 @@ public class ContAgregarPersonal {
         Alert a = new Alert(AlertType.NONE);
         try {
             if (cbRol.getSelectionModel().getSelectedItem().equals("Veterinaria")) {
-                Veterinaria nuevo = new Veterinaria(Integer.parseInt(entryRut.getText()), entryNombre.getText(), entryApellido.getText(), entryTitulo.getText(), entryEspecialidad.getText());                
+                Veterinaria nuevo = new Veterinaria(Integer.parseInt(entryRut.getText().trim()), entryNombre.getText().trim(), entryApellido.getText().trim(), entryTitulo.getText().trim(), entryEspecialidad.getText().trim());                
                 a.setAlertType(AlertType.INFORMATION);
                 a.setContentText("Creado con exito\nFecha de Contratacion: "+ nuevo.getFechaContratacion());
                 a.show();
             }else if (cbRol.getSelectionModel().getSelectedItem().equals("Auxiliar")) {
-                Auxiliar nuevo = new Auxiliar(Integer.parseInt(entryRut.getText()), entryNombre.getText(), entryApellido.getText(), entryDestreza.getText());
+                Auxiliar nuevo = new Auxiliar(Integer.parseInt(entryRut.getText()), entryNombre.getText().trim(), entryApellido.getText().trim(), entryDestreza.getText().trim());
                 a.setAlertType(AlertType.INFORMATION);
                 a.setContentText("Creado con exito\nFecha de Contratacion: "+ nuevo.getFechaContratacion());
                 a.show();
@@ -84,7 +84,6 @@ public class ContAgregarPersonal {
             entryRut.setText("");
             entryNombre.setText("");
             entryApellido.setText("");
-            cbRol.getSelectionModel().clearSelection();
             entryTitulo.setText("");
             entryEspecialidad.setText("");
             entryDestreza.setText("");
@@ -131,6 +130,10 @@ public class ContAgregarPersonal {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean isBlankString(String string) {
+        return string == null || string.trim().isEmpty();
     }
 
     @FXML
