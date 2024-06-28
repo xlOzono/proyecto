@@ -1,6 +1,5 @@
 
 import java.io.IOException;
-
 import Clases.Animales.Animal;
 import Clases.Animales.Domesticos.Domestico;
 import Clases.Ficha.Ficha;
@@ -32,44 +31,33 @@ public class ContIngresarNombre {
 
     @FXML
     void aceptarPressed(ActionEvent event) {
-        //Si el arreglo con los animales está vacío abre la ventana ingresar mascota
-        if (Animal.animales.isEmpty()) {
-            Parent root;
-            try {
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle("Ingresar Domestico");
-                stage.setScene(new Scene(root, 800, 400));
-                stage.show();
-                ((Node)(event.getSource())).getScene().getWindow().hide();
+        try {
+            //Si el arreglo con los animales está vacío o el codigo no se encuentra abre la ventana ingresar mascota
+            if (!Domestico.containsName(entryNombre.getText()) || Animal.animales.isEmpty()) {
+                Parent root;
+                try {
+                    root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
+                    Stage stage = new Stage();
+                    stage.setTitle("Ingresar Domestico");
+                    stage.setScene(new Scene(root, 800, 400));
+                    stage.show();
+                    ((Node)(event.getSource())).getScene().getWindow().hide();
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        //Si no está vacía, busca en el arreglo el nombre del animal para rellenar la ficha
-
-        //Si se encuentra al animal en la lista, rellena la ficha
-        if (Domestico.containsName(entryNombre.getText())){
-            Domestico mascota = Domestico.getDomestico(entryNombre.getText());
-            Ficha ficha = Ficha.getFicha(mascota);
             
-            lbFicha.setText("ValoresFicha");
+            //Si se encuentra al animal en la lista, rellena la ficha
+            if (Domestico.containsName(entryNombre.getText())){
+                Domestico mascota = Domestico.getDomestico(entryNombre.getText());
+                Ficha ficha = Ficha.getFicha(mascota);
+                lbFicha.setText("Numero de ficha: " + Integer.toString(ficha.getNumFicha()));
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error");
+            // TODO: handle exception
         }
-        else{
-            Parent root;
-            try {
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas/IngresarDomestico.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle("Ingresar Domestico");
-                stage.setScene(new Scene(root, 800, 400));
-                stage.show();
-                ((Node)(event.getSource())).getScene().getWindow().hide();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-            }
     }
 
     @FXML

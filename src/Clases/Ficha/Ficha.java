@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import Clases.Diagnostico;
 import Clases.Persona;
 import Clases.Animales.Animal;
-import Clases.Animales.Domesticos.Domestico;
 
 public class Ficha {
     public static ArrayList<Ficha> fichas = new ArrayList<>();
@@ -34,16 +33,6 @@ public class Ficha {
         }
         return null;
     }
-    
-//* public String toString() {
-//    if (mascota instanceof Domestico) {
-//        String linea = String.format("Numero de Ficha: %s \nNombre Mascota: %s\nNombre Propietario", numFicha,((Domestico)mascota).getNombre(),propietario.);
-//    }else{
-//        String linea = String.format("Numero de Ficha: %s \nNombre Mascota: %s\nNombre Propietario", numFicha);
-//    }
-//    return linea;
-//  }
-    
 
     public int getNumFicha() {
         return numFicha;
