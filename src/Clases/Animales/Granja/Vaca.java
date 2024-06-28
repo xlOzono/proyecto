@@ -9,6 +9,7 @@ public class Vaca extends Granja{
         this.raza = raza;
     }
 
+    @Override
     public String getRaza() {
         return raza;
     }

@@ -2,14 +2,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
-
-import javafx.event.*;
-import Clases.ElementoFicha;
 import Clases.Ficha.ElementoFactura;
+import Clases.Ficha.ElementoFicha;
 import Clases.Ficha.Factura;
-import Clases.Personal.Personal;
-import Persona.Ficha;
+import Clases.Ficha.Ficha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +15,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;

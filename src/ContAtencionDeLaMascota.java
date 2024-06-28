@@ -7,11 +7,11 @@ import javafx.scene.Node;
 import javax.swing.JOptionPane;
 
 import Clases.Diagnostico;
-import Clases.ElementoFicha;
+import Clases.Ficha.ElementoFicha;
+import Clases.Ficha.Ficha;
 import Clases.Personal.Auxiliar;
 import Clases.Personal.Personal;
 import Clases.Personal.Veterinaria;
-import Persona.Ficha;
 import Persona.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

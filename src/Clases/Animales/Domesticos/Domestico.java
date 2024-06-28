@@ -28,6 +28,21 @@ public class Domestico extends Animal{
         return null;
     }
 
+    public String getTipoDomestico() {
+        if (this instanceof Perro) {
+            return "Perro";
+        }else if (this instanceof Gato) {
+            return "Gato";
+        }else if (this instanceof Ave) {
+            return "Ave";
+        }
+        return null;
+    }
+
+    public String getRaza() {
+        return null;
+    }
+
     public String getNombre() {
         return nombre;
     }

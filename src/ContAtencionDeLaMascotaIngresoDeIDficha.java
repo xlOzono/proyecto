@@ -1,9 +1,9 @@
 import java.io.IOException;
 
+import Clases.Ficha.Ficha;
 import Clases.Personal.Auxiliar;
 import Clases.Personal.Personal;
 import Clases.Personal.Veterinaria;
-import Persona.Ficha;
 import javafx.scene.Node;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

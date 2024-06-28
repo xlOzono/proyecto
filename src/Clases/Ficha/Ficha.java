@@ -1,9 +1,9 @@
-package Persona;
+package Clases.Ficha;
 import java.util.ArrayList;
 
 import Clases.Diagnostico;
-import Clases.ElementoFicha;
 import Clases.Animales.Animal;
+import Persona.Persona;
 
 
 

@@ -3,7 +3,7 @@ import java.io.IOException;
 
 import Clases.Animales.Animal;
 import Clases.Animales.Domesticos.Domestico;
-import Persona.Ficha;
+import Clases.Ficha.Ficha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

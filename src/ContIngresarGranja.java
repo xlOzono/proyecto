@@ -10,7 +10,7 @@ import Clases.Animales.Granja.Caballo;
 import Clases.Animales.Granja.Cabra;
 import Clases.Animales.Granja.Granja;
 import Clases.Animales.Granja.Vaca;
-import Persona.Ficha;
+import Clases.Ficha.Ficha;
 import Persona.Fisica;
 import Persona.Juridica;
 import Persona.Persona;

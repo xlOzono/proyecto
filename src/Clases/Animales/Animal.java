@@ -1,8 +1,6 @@
 package Clases.Animales;
 import java.util.ArrayList;
 
-import Clases.ElementoFicha;
-
 public class Animal {
     private TipoAnimal tipo;
     private int edad;

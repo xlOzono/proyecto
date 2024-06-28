@@ -2,7 +2,7 @@ import java.io.IOException;
 
 import Clases.Animales.Animal;
 import Clases.Animales.Granja.Granja;
-import Persona.Ficha;
+import Clases.Ficha.Ficha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -61,7 +61,6 @@ public class ContIngresarCodigo {
             a.setAlertType(AlertType.ERROR);
             a.setContentText("Ingrese un numero");
             a.show();
-            // TODO: handle exception
         }
     }
 

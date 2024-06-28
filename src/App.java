@@ -3,9 +3,9 @@ import Clases.Animales.TipoAnimal;
 import Clases.Animales.Domesticos.Ave;
 import Clases.Animales.Domesticos.Gato;
 import Clases.Animales.Domesticos.Perro;
+import Clases.Ficha.Ficha;
 import Clases.Personal.Auxiliar;
 import Clases.Personal.Veterinaria;
-import Persona.Ficha;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Ventanas/PantallaPrincipal.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Menu Principal");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
         
@@ -26,8 +26,8 @@ public class App extends Application {
         new Gato(TipoAnimal.DOMESTICO,123,"","epico");
         new Ave(TipoAnimal.DOMESTICO,123,"etc");
         new Ficha();
-        new Veterinaria(1, "fabian", "quezada", "pixula loca", "paja");
-        new Auxiliar(2, "joshua", "jara klein", "pajear sin las manos");
+        new Veterinaria(1, "Juan", "Perez", "Medico Veterinario", "Animales exoticos");
+        new Auxiliar(2, "Diego", "Martinez", "Esterilización");
         
 
         

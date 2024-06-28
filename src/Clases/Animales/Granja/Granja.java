@@ -36,6 +36,21 @@ public class Granja extends Animal{
         return null;
     }
 
+    public String getTipoGranja() {
+        if (this instanceof Cabra) {
+            return "Cabra";
+        }else if (this instanceof Caballo) {
+            return "Caballo";
+        }else if (this instanceof Vaca) {
+            return "Vaca";
+        }
+        return null;
+    }
+
+    public String getRaza() {
+        return null;
+    }
+
     public static boolean y(int int1) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'y'");

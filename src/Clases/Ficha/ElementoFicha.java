@@ -1,4 +1,6 @@
-package Clases;
+package Clases.Ficha;
+
+import Clases.Diagnostico;
 import Clases.Personal.Auxiliar;
 import Clases.Personal.Veterinaria;
 

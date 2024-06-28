@@ -9,8 +9,7 @@ import Clases.Animales.Domesticos.Ave;
 import Clases.Animales.Domesticos.Domestico;
 import Clases.Animales.Domesticos.Gato;
 import Clases.Animales.Domesticos.Perro;
-
-import Persona.Ficha;
+import Clases.Ficha.Ficha;
 import Persona.Fisica;
 import Persona.Juridica;
 import Persona.Persona;
