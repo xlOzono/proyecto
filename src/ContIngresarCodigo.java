@@ -61,7 +61,6 @@ public class ContIngresarCodigo {
             a.setAlertType(AlertType.ERROR);
             a.setContentText("Ingrese un numero");
             a.show();
-            // TODO: handle exception
         }
     }
 

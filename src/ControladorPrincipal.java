@@ -63,6 +63,19 @@ public class ControladorPrincipal {
 
     @FXML
     void gestionarPressed(ActionEvent event) {
-
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas\\GestionarPersonal.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Gestionar Personal");
+            stage.setScene(new Scene(root, 600, 400));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }    
     }
 }
