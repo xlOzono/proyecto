@@ -1,18 +1,23 @@
 package Clases.Animales;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Animal {
-    public ArrayList<Animal> animales;
+    
     private TipoAnimal tipo;
     private int edad;
+    public static ArrayList<Animal> animales = new ArrayList<Animal>();
     
     public Animal(TipoAnimal tipo, int edad) {
         this.tipo = tipo;
         this.edad = edad;
         animales.add(this);
-    }
 
+    }
+    public static ArrayList<Animal> getArrayList(){
+        return animales;
+    }
     public TipoAnimal getTipo() {
         return tipo;
     }

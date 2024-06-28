@@ -11,6 +11,7 @@ public class ElementoFicha {
         this.fecha = fecha;
         this.diagnostico = diagnostico;
         this.tratamiento = tratamiento;
+        
     }
 
     public String getFecha() {

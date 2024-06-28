@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContAtencionDeLaMascota">
+   <children>
+      <Label layoutX="620.0" layoutY="21.0" text="Nuevo Elemento de ficha">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btVolver" layoutX="793.0" layoutY="442.0" mnemonicParsing="false" onAction="#volverPressed" prefHeight="30.0" prefWidth="63.0" text="Volver">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="40.0" layoutY="21.0" text="Diagnostico">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="AreaTextoHipotesis" layoutX="42.0" layoutY="90.0" onKeyTyped="#KeyTypedHipotesis" prefHeight="54.0" prefWidth="256.0" />
+      <TextArea fx:id="AreaTextoIndicaciones" layoutX="41.0" layoutY="214.0" onKeyTyped="#keyTypedIndicaciones" prefHeight="54.0" prefWidth="256.0" />
+      <TextArea fx:id="AreaTextoInsumos" layoutX="41.0" layoutY="301.0" onKeyTyped="#keyTypedInsumos" prefHeight="54.0" prefWidth="256.0" />
+      <Label layoutX="41.0" layoutY="69.0" prefHeight="11.0" prefWidth="206.0" text="Hipotesis de la enfermedad">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="41.0" layoutY="196.0" prefHeight="18.0" prefWidth="206.0" text="Indicaciones del tratamiento">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="41.0" layoutY="281.0" prefHeight="18.0" prefWidth="206.0" text="Insumos y remedios">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="39.0" layoutY="154.0" text="Tratamiento">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btGuardarFicha" layoutX="41.0" layoutY="365.0" mnemonicParsing="false" onAction="#GuardarFichaPressed" prefHeight="30.0" prefWidth="256.0" text="Guardar Ficha">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="AreaTextoElementoFicha" depthTest="DISABLE" layoutX="620.0" layoutY="90.0" prefHeight="324.0" prefWidth="241.0" style="-fx-background-color: LightGRAY;" wrapText="true" />
+      <Label layoutX="336.0" layoutY="21.0" text="Ficha Tecnica">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="AreaTextoFichaTecnica" depthTest="DISABLE" layoutX="335.0" layoutY="87.0" prefHeight="324.0" prefWidth="241.0" style="-fx-background-color: LightGRAY;" wrapText="true" />
+   </children>
+</AnchorPane>

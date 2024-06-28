@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContCobrarLaAtención">
+   <children>
+      <Label fx:id="MedioFacturacion" layoutX="608.0" layoutY="31.0" prefHeight="35.0" prefWidth="216.0" text="Medio Facturación">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btVolver" layoutX="768.0" layoutY="483.0" mnemonicParsing="false" onAction="#volverPressed" prefHeight="30.0" prefWidth="63.0" text="Volver">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="AreaTextoInsumos" layoutX="38.0" layoutY="161.0" onKeyPressed="#OnKeyPressedAreaTextoInsumos" prefHeight="37.0" prefWidth="256.0" />
+      <TextArea fx:id="AreaTextoRemedios" layoutX="40.0" layoutY="229.0" onKeyPressed="#OnKeyPressedAreaTextoRemedios" prefHeight="38.0" prefWidth="256.0" />
+      <TextArea fx:id="AreaTextoProcedimientos" layoutX="40.0" layoutY="301.0" onKeyPressed="#OnKeyPressedAreaTextoProcedimientos" onKeyTyped="#keyTypedInsumos" prefHeight="10.0" prefWidth="256.0" />
+      <Label layoutX="40.0" layoutY="140.0" prefHeight="11.0" prefWidth="206.0" text="Valor Insumos:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="40.0" layoutY="209.0" prefHeight="18.0" prefWidth="206.0" text="Valor Remedios:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="39.0" layoutY="279.0" prefHeight="18.0" prefWidth="206.0" text="Valor Procedimientos:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextArea fx:id="AreaTextoCostos" depthTest="DISABLE" editable="false" layoutX="608.0" layoutY="87.0" prefHeight="371.0" prefWidth="241.0" style="-fx-background-color: LightGRAY;" wrapText="true" />
+      <Label layoutX="335.0" layoutY="31.0" text="Ficha Tecnica">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="AreaTextoFichaTecnica" depthTest="DISABLE" editable="false" layoutX="335.0" layoutY="87.0" prefHeight="371.0" prefWidth="241.0" style="-fx-background-color: LightGRAY;" wrapText="true" />
+      <TextArea fx:id="AreaTextoConsulta" layoutX="38.0" layoutY="373.0" onKeyPressed="#OnKeyPressedAreaTextoConsulta" prefHeight="10.0" prefWidth="256.0" />
+      <Label layoutX="39.0" layoutY="353.0" prefHeight="18.0" prefWidth="206.0" text="Valor consulta:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="ComboBoxBoletaFactura" layoutX="40.0" layoutY="88.0" onAction="#OnActionComboBoxBoletaFactura" prefHeight="30.0" prefWidth="256.0" visibleRowCount="2" />
+      <Label layoutX="40.0" layoutY="80.0" prefHeight="11.0" prefWidth="206.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btGuardar" layoutX="40.0" layoutY="424.0" mnemonicParsing="false" onAction="#GuardarPressed" prefHeight="30.0" prefWidth="256.0" text="Guardar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
