@@ -8,7 +8,8 @@ public class Cabra extends Granja{
         super(tipo, edad, codigo);
         this.raza = raza;
     }
-
+    
+    @Override
     public String getRaza() {
         return raza;
     }

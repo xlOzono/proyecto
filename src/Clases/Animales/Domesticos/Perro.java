@@ -9,7 +9,8 @@ public class Perro extends Domestico{
         super(tipo, edad, nombre);
         this.raza = raza;
     }
-
+    
+    @Override
     public String getRaza() {
         return raza;
     }

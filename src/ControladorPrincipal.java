@@ -58,7 +58,20 @@ public class ControladorPrincipal {
 
     @FXML
     void eliminarPressed(ActionEvent event) {
-
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas\\EliminarMascota.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Eliminar Mascota");
+            stage.setScene(new Scene(root, 800, 438));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }    
     }
 
     @FXML

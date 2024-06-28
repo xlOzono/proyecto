@@ -10,6 +10,7 @@ public class Gato extends Domestico{
         this.raza = raza;
     }
 
+    @Override
     public String getRaza() {
         return raza;
     }

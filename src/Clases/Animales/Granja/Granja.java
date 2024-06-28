@@ -36,5 +36,20 @@ public class Granja extends Animal{
         return null;
     }
 
+    public String getTipoGranja() {
+        if (this instanceof Cabra) {
+            return "Cabra";
+        }else if (this instanceof Caballo) {
+            return "Caballo";
+        }else if (this instanceof Vaca) {
+            return "Vaca";
+        }
+        return null;
+    }
+
+    public String getRaza() {
+        return null;
+    }
+
     
 }
