@@ -1,10 +1,9 @@
 package Clases.Animales;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import Clases.ElementoFicha;
+
 public class Animal {
-    
     private TipoAnimal tipo;
     private int edad;
     public static ArrayList<Animal> animales = new ArrayList<Animal>();

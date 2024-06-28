@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContIngresarDomestico">
    <children>
-      <Label layoutX="197.0" layoutY="14.0" text="Ingresar Domestico" textAlignment="CENTER">
+      <Label layoutX="281.0" layoutY="14.0" text="Crear Ficha Domestico" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <HBox alignment="TOP_CENTER" layoutY="69.0" prefHeight="331.0" prefWidth="600.0">
+      <HBox alignment="TOP_CENTER" layoutY="69.0" prefHeight="331.0" prefWidth="800.0">
          <children>
             <VBox prefHeight="360.0" prefWidth="322.0">
                <children>
@@ -55,7 +54,7 @@
                                     <Insets top="20.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="Raza">
+                              <Label fx:id="lbRaza" text="Raza">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -70,7 +69,7 @@
                         </VBox>
                         <VBox alignment="TOP_CENTER" prefHeight="340.0" prefWidth="270.0">
                            <children>
-                              <ComboBox fx:id="cbTipo" prefHeight="26.0" prefWidth="170.0">
+                              <ComboBox fx:id="cbTipo" onAction="#cbTipoPressed" prefHeight="26.0" prefWidth="170.0">
                                  <VBox.margin>
                                     <Insets top="44.0" />
                                  </VBox.margin>
@@ -80,21 +79,16 @@
                                     <Insets top="13.0" />
                                  </VBox.margin>
                               </TextField>
-                              <TextField>
+                              <TextField fx:id="entryEdad">
                                  <VBox.margin>
                                     <Insets top="14.0" />
                                  </VBox.margin>
                               </TextField>
-                              <TextField>
+                              <TextField fx:id="entryRaza">
                                  <VBox.margin>
                                     <Insets top="14.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Button mnemonicParsing="false" text="Aceptar">
-                                 <VBox.margin>
-                                    <Insets top="20.0" />
-                                 </VBox.margin>
-                              </Button>
                            </children>
                         </VBox>
                      </children>
@@ -117,29 +111,40 @@
                                  <font>
                                     <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Label text="Email">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
                                  <VBox.margin>
-                                    <Insets top="20.0" />
+                                    <Insets top="-20.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="Telefono">
+                              <Label text="Tipo Persona">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets top="20.0" />
+                                    <Insets top="21.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="Direccion">
+                              <Label fx:id="lbNombre" text="Nombre">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets top="20.0" />
+                                    <Insets top="22.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lbApellido" text="Apellido">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="19.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lbRut" text="RUT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="21.0" />
                                  </VBox.margin>
                               </Label>
                            </children>
@@ -149,31 +154,41 @@
                         </VBox>
                         <VBox alignment="TOP_CENTER" prefHeight="340.0" prefWidth="270.0">
                            <children>
-                              <TextField>
+                              <ComboBox fx:id="cbTipoPersona" onAction="#cbTipoPersonaPressed" prefHeight="26.0" prefWidth="170.0">
                                  <VBox.margin>
-                                    <Insets top="44.0" />
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <TextField fx:id="entryNombre">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
                                  </VBox.margin>
                               </TextField>
-                              <TextField>
+                              <TextField fx:id="entryApellido">
                                  <VBox.margin>
-                                    <Insets top="14.0" />
+                                    <Insets top="15.0" />
                                  </VBox.margin>
                               </TextField>
-                              <TextField>
+                              <TextField fx:id="entryRUT">
                                  <VBox.margin>
-                                    <Insets top="14.0" />
+                                    <Insets top="15.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Button mnemonicParsing="false" text="Aceptar">
+                              <Button fx:id="btAceptarMascota" mnemonicParsing="false" onAction="#aceptarMascotaPressed" text="Aceptar">
                                  <VBox.margin>
-                                    <Insets top="20.0" />
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="btVolver" mnemonicParsing="false" onAction="#volverPressed" text="Volver">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
                         </VBox>
                      </children>
                      <VBox.margin>
-                        <Insets />
+                        <Insets top="20.0" />
                      </VBox.margin>
                      <padding>
                         <Insets right="30.0" top="20.0" />
@@ -181,6 +196,89 @@
                   </HBox>
                </children>
             </VBox>
+            <HBox alignment="TOP_CENTER" prefHeight="378.0" prefWidth="301.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="360.0" prefWidth="284.0">
+                     <children>
+                        <Label text="Email">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Telefono">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="21.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Direccion">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="19.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lbRazonSocial" text="Razon Social">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="23.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lbRolTrib" text="Rol Tributario">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="19.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="340.0" prefWidth="270.0">
+                     <children>
+                        <TextField fx:id="entryEmail">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="entryTelefono">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="entryDireccion">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="entryRazonSocial">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="entryRolTrib">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="30.0" top="20.0" />
+               </padding>
+            </HBox>
          </children>
       </HBox>
    </children>

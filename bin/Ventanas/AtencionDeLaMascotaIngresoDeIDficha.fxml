@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="356.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContAtencionDeLaMascotaIngresoDeIDficha">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContAtencionDeLaMascotaIngresoDeIDficha">
    <children>
-      <Button fx:id="btVolver" layoutX="250.0" layoutY="260.0" mnemonicParsing="false" onAction="#volverPressed" prefHeight="25.0" prefWidth="74.0" text="Volver">
+      <Button fx:id="btVolver" layoutX="509.0" layoutY="276.0" mnemonicParsing="false" onAction="#volverPressed" prefHeight="25.0" prefWidth="74.0" text="Volver">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="40.0" layoutY="21.0" text="Ingrese el numero de ficha">
+      <Label layoutX="41.0" layoutY="30.0" text="Ingrese el numero de ficha">
          <font>
             <Font size="24.0" />
          </font>
@@ -30,5 +32,24 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <TextArea fx:id="AreaTextoIngreseRut" layoutX="377.0" layoutY="106.0" prefHeight="38.0" prefWidth="206.0" />
+      <Label layoutX="377.0" layoutY="86.0" prefHeight="11.0" prefWidth="206.0" text="Ingrese su Rut">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="377.0" layoutY="30.0" text="Personal a cargo">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="CheckBoxAuxiliarRequerrido" layoutX="378.0" layoutY="159.0" mnemonicParsing="false" onAction="#OnActionCheckBoxAuxiliarRequerrido" text="Auxiliar Requerrido" />
+      <Label fx:id="LabelIngreseElRutDelAuxiliar" disable="true" layoutX="378.0" layoutY="189.0" prefHeight="11.0" prefWidth="206.0" text="Ingrese el rut del auxiliar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="AreaTextoRutAuxiliar" disable="true" layoutX="377.0" layoutY="210.0" prefHeight="38.0" prefWidth="206.0" />
+      <Hyperlink layoutX="-212.0" layoutY="36.0" text="Hyperlink" />
    </children>
 </AnchorPane>

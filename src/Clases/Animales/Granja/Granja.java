@@ -11,12 +11,34 @@ public class Granja extends Animal{
         this.codigo = codigo;
     }
 
+    public static boolean containsCodigo(int codigo) {
+        for(Animal animal: Animal.animales){
+            if(animal instanceof Granja && ((Granja)animal).getCodigo() == codigo){
+                return true;
+            }
+        }
+        return false;
+    }
     public int getCodigo() {
         return codigo;
     }
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    public static Granja getGranja(int codigo) {
+        for(Animal animal: Animal.animales){
+            if(animal instanceof Granja && ((Granja)animal).getCodigo() == codigo){
+                return (Granja) animal;
+            }
+        }
+        return null;
+    }
+
+    public static boolean y(int int1) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'y'");
     }
 
     

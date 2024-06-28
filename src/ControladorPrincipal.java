@@ -53,7 +53,8 @@ public class ControladorPrincipal {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ventanas\\AtencionDeLaMascotaIngresoDeIDficha.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Ingresar Mascota");
-            stage.setScene(new Scene(root, 600, 400));
+            stage.setScene(new Scene(root, 622, 344));
+            stage.setResizable(false);
             stage.show();
             // Hide this current window (if this is what you want)
             ((Node)(event.getSource())).getScene().getWindow().hide();
@@ -72,7 +73,8 @@ public class ControladorPrincipal {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ventanas\\CobrarLaAtencion.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Ingresar Mascota");
-            stage.setScene(new Scene(root, 600, 400));
+            stage.setScene(new Scene(root, 1025, 538));
+            stage.setResizable(false);
             stage.show();
             // Hide this current window (if this is what you want)
             ((Node)(event.getSource())).getScene().getWindow().hide();

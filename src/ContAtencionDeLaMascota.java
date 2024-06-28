@@ -7,8 +7,12 @@ import javafx.scene.Node;
 import javax.swing.JOptionPane;
 
 import Clases.Diagnostico;
-import Clases.Ficha.ElementoFicha;
-import Clases.Ficha.Ficha;
+import Clases.ElementoFicha;
+import Clases.Personal.Auxiliar;
+import Clases.Personal.Personal;
+import Clases.Personal.Veterinaria;
+import Persona.Ficha;
+import Persona.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +24,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class ContAtencionDeLaMascota {
     private Ficha fichaid;
+    private Personal veterinaria;
+    private Personal auxiliar;
     
     
     @FXML
@@ -53,6 +60,8 @@ public class ContAtencionDeLaMascota {
 
     @FXML
     private Button btVolver;
+
+
     public void imprimirTexto(){
         AreaTextoElementoFicha.setText("");
         AreaTextoElementoFicha.appendText("Nuevo Elemento Ficha");
@@ -61,24 +70,54 @@ public class ContAtencionDeLaMascota {
         AreaTextoElementoFicha.appendText("\nInsumos: " + AreaTextoInsumos.getText());
         AreaTextoElementoFicha.appendText("\nIndicaciones: " + AreaTextoIndicaciones.getText());
     }
-    public void mostrarFicha(Ficha Ficha){
+
+    public void mostrarFicha(Ficha Ficha,Personal personal,Personal personal2){
         fichaid = Ficha;
-        AreaTextoFichaTecnica.appendText("──────────────────");
-        AreaTextoFichaTecnica.appendText("\n Ficha Numero: "+fichaid.getNumFicha());
-        AreaTextoFichaTecnica.appendText("\n──────────────────");
+        veterinaria = personal;
+        auxiliar = personal2;
+
+        AreaTextoFichaTecnica.appendText("\nFicha Numero: "+fichaid.getNumFicha());
+        AreaTextoFichaTecnica.appendText("\n~~~~~~~~~~~~~~~~~~~~~~");
         if (fichaid.getConjElementos().size() == 0) {
-            AreaTextoFichaTecnica.appendText("\n No se ha registrado ningún elemento ficha" );
-            AreaTextoFichaTecnica.appendText("\n──────────────────");
+            
+            AreaTextoFichaTecnica.appendText("\nNo se ha registrado ningún elemento ficha" );
 
         }else{
-            for(ElementoFicha elementoFicha: fichaid.getConjElementos()){
-                AreaTextoFichaTecnica.appendText("\n Fecha: "+elementoFicha.getFecha() );
-                AreaTextoFichaTecnica.appendText("\n Diagnostico: "+elementoFicha.getDiagnostico().getDescripcion());
-                AreaTextoFichaTecnica.appendText("\n Tratamiento: "+elementoFicha.getTratamiento() );
+            /*Se crea un for que recorre el ArrayList del elementoFicha puesto como atributo ConjElementos
+             * elementoFicha es la variable que toma el valor del objeto ElementoFicha por lo cual 
+             * se le pueden aplicar los distintos métodos correspondientes a ese objeto como es de
+             * Obtener Fecha .getFecha
+             * Obtener Tratamiento .getTratamiento
+             * Obtener el objeto Veterinaria para luego aplicar sus métodos que es el de obtener nombre .getNombre
+             */
+            try {
+                for(ElementoFicha elementoFicha: fichaid.getConjElementos()){
+                    AreaTextoFichaTecnica.appendText("\nElemento de la ficha\n");
+                    /*Imprimir información de la veterinaria llamando al atributo correspondiente de cada elemento 
+                      que existe en el arraylist ConjElementos*/
+                    AreaTextoFichaTecnica.appendText("\nVeterinaria: \n"+"Nombre: "+elementoFicha.getVeterinaria().getNombre()
+                    +" "+elementoFicha.getVeterinaria().getApellido()
+                    +"\nRut: "+elementoFicha.getVeterinaria().getRut()
+                    +"\nEspecialidad: "+elementoFicha.getVeterinaria().getEspecialidad());
+                    if (elementoFicha.getAuxiliar() != null) {
+                        AreaTextoFichaTecnica.appendText("\n\nAuxiliar: \n"+"Nombre: "+elementoFicha.getAuxiliar().getNombre()
+                    +" "+elementoFicha.getAuxiliar().getApellido()
+                    +"\nRut: "+elementoFicha.getAuxiliar().getRut()
+                    +"\nDestreza: "+elementoFicha.getAuxiliar().getDestrezaTecnica());      
+                    }                           
+                    AreaTextoFichaTecnica.appendText("\nFecha: "+elementoFicha.getFecha() +"\n");
+                    AreaTextoFichaTecnica.appendText("\nDiagnostico: \n"+elementoFicha.getDiagnostico().getDescripcion());
+                    AreaTextoFichaTecnica.appendText("\nTratamiento: \n\n"+elementoFicha.getTratamiento() );
+                    AreaTextoFichaTecnica.appendText("\n~~~~~~~~~~~~~~~~~~~~~~");
+                }
+            } catch (Exception e) {
+                
+            }
+            
                 
             }
         }
-        }
+        
     
 
     @FXML
@@ -91,8 +130,39 @@ public class ContAtencionDeLaMascota {
         Diagnostico diagnostico = new Diagnostico(fechaComoCadena, AreaTextoHipotesis.getText());
 
         //Se crea el objeto elemento ficha
-        ElementoFicha elemento = new ElementoFicha(fechaComoCadena, diagnostico, "Insumos para el animal\n:"+AreaTextoInsumos.getText()+"\nIndicaciones\n:"+AreaTextoIndicaciones.getText());
-        fichaid.getConjElementos().add(elemento);
+        try {
+            ElementoFicha elemento = new ElementoFicha(fechaComoCadena, diagnostico, "Insumos para el animal\n:"+AreaTextoInsumos.getText()+"\nIndicaciones\n:"+AreaTextoIndicaciones.getText());
+            fichaid.getConjElementos().add(elemento);
+            elemento.setVeterinaria((Veterinaria)veterinaria);
+            if (auxiliar != null) {elemento.setAuxiliar((Auxiliar) auxiliar);}
+            else{elemento.setAuxiliar(null);}
+            AreaTextoFichaTecnica.setText("");
+            mostrarFicha(fichaid,veterinaria,auxiliar);
+            Alert a = new Alert(AlertType.NONE);
+            a.setAlertType(AlertType.CONFIRMATION);
+            a.setContentText("Elemento de ficha creado exitosamente");
+            a.show();
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(getClass().getResource("\\Ventanas\\CobrarLaAtencion.fxml").openStream());
+            ContCobrarLaAtención ContAtencionDeLaMascotainstancia = (ContCobrarLaAtención)loader.getController();
+            ContAtencionDeLaMascotainstancia.mostrarFicha(fichaid);
+            Stage stage = new Stage();
+            stage.setTitle("Ventana Atención");
+            stage.setScene(new Scene(root, 1029, 536));
+            stage.setResizable(false);
+            stage.show();
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+   
+
+        } catch (Exception e) {
+            System.out.println(e);
+                Alert a = new Alert(AlertType.NONE);
+                a.setAlertType(AlertType.WARNING);
+                a.setContentText("Ingrese los datos correctamente");
+                a.show(); 
+        }
+     
+
     }
 
     @FXML
@@ -113,10 +183,11 @@ public class ContAtencionDeLaMascota {
     void volverPressed(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Ventanas\\PantallaPrincipal.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ventanas\\AtencionDeLaMascotaIngresoDeIDficha.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Ingresar Mascota");
-            stage.setScene(new Scene(root, 600, 400));
+            stage.setScene(new Scene(root, 372, 338));
+            stage.setResizable(false);
             stage.show();
             // Hide this current window (if this is what you want)
             ((Node)(event.getSource())).getScene().getWindow().hide();
@@ -130,6 +201,8 @@ public class ContAtencionDeLaMascota {
 
     @FXML
     void initialize() {
+        AreaTextoFichaTecnica.setEditable(false);
+        AreaTextoElementoFicha.setEditable(false);
         imprimirTexto();
         assert AreaTextoElementoFicha != null : "fx:id=\"AreaTextoElementoFicha\" was not injected: check your FXML file 'AtencionDeLaMascota.fxml'.";
         assert AreaTextoFichaTecnica != null : "fx:id=\"AreaTextoFichaTecnica\" was not injected: check your FXML file 'AtencionDeLaMascota.fxml'.";
